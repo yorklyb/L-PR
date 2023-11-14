@@ -3,18 +3,10 @@
 # Instance Reconstruction Evaluation
 We use the same [rosbag](https://drive.google.com/file/d/1WpoWz7d5rv1s7l6DpmfL7u7jyJ3XLOmj/view?usp=sharing) to evaluate the proposed method against  [Livox Mapping](https://github.com/Livox-SDK/livox_mapping) and [LOAM Livox](https://github.com/hku-mars/loam_livox). The rosbag was recorded in a garage. The LiDAR follows an elliptical trajectory to scan a vehicle (Mercedes-Benz GLB).  Please refer to the following videos for the details of the rosbag. <br>
 
-This video shows the mapping procedure of [Livox Mapping](https://github.com/Livox-SDK/livox_mapping).
-
- 
-https://github.com/yorklyb/LiDAR-SFM/assets/58899542/e5ef8125-e5ff-4b1e-95bd-034628be595c
-
-This video shows the mapping procedure of [LOAM Livox](https://github.com/hku-mars/loam_livox).
-
-
-https://github.com/yorklyb/LiDAR-SFM/assets/58899542/6da9dfb8-39fd-4448-8095-e6cc0a2fa00e
-
-
-
+*  This video (×90) shows the mapping procedure of [Livox Mapping](https://github.com/Livox-SDK/livox_mapping).  <br>
+![sdk](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/1bd0ec6b-c086-4b53-a252-d9babfbaa6df)  <br>
+*  This video (×90) shows the mapping procedure of [LOAM Livox](https://github.com/hku-mars/loam_livox). <br>
+![loam](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/6bfeaa09-8a47-4818-904d-7ea4fe851de4)
 * Ground Truth (Mercedes-Benz GLB). <br>
 ![ezgif-1-375ecca334](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/a1eba0cf-f41f-4d7a-89e3-4e31194c628a) <br>
 The utilized metric is the Chamfer Distance (CD). Given two point sets, the CD is the sum of the squared distance of each point to the nearest point in the other point set: <br>
