@@ -11,5 +11,5 @@ CD: 0.003029<br>
 CD: 0.011128<br>
 ![ezgif-1-5774539aa0](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/cdaa5904-da4d-46ed-9f7a-9b063fd5c1df)
 * [LOAM Livox](https://github.com/hku-mars/loam_livox) <br>
-CD: 0.0155168<br>
+CD: 0.033571<br>
 ![ezgif-1-5b279fb800](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/f3f95f46-6b44-456c-8d3a-a4afd557b088)
