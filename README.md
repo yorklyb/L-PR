@@ -2,6 +2,11 @@
 
 # Instance Reconstruction Evaluation
 We use the same [rosbag](https://drive.google.com/file/d/1WpoWz7d5rv1s7l6DpmfL7u7jyJ3XLOmj/view?usp=sharing) to evaluate the proposed method against  [LOAM Livox](https://github.com/hku-mars/loam_livox) and [Livox Mapping](https://github.com/Livox-SDK/livox_mapping). The rosbag was recorded in a garage. The LiDAR follows an elliptical trajectory to scan a vehicle (Mercedes-Benz GLB).  Please refer to the following videos for the details of the rosbag.
+
+[![Alt text](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=3jVkphKte30)
+
+
+
 * Ground Truth (Mercedes-Benz GLB). <br>
 ![ezgif-1-375ecca334](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/a1eba0cf-f41f-4d7a-89e3-4e31194c628a) <br>
 The utilized metric is the Chamfer Distance (CD). Given two point sets, the CD is the sum of the squared distance of each point to the nearest point in the other point set: <br>
