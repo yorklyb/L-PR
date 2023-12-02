@@ -276,7 +276,7 @@ for(int i = 0; i < range_image_i.width*range_image_i.height; ++i){
 	
 
 		Mat gray;
-         imwrite("this1.png",image);
+     //    imwrite("this1.png",image);
     //cvtColor(frame, gray, COLOR_BGR2GRAY);
     cvtColor(image, gray, COLOR_BGR2GRAY);
     //threshold(gray,gray,20,255,cv::THRESH_BINARY);
