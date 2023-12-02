@@ -72,7 +72,11 @@ opencv-python(cv2) has a built-in ArUco detector. Please ensure you can run the 
 * Raw [rosbag](https://drive.google.com/file/d/1mD_iukNYWuMu_6VKfMzh-utSH37x2Nzp/view?usp=sharing) of the mapping and localization evaluation.
 * The extracted point clouds of vehicles and the script to run the quantitative evaluation are available [here](https://drive.google.com/drive/folders/1YU-PE9-gMEJdje15EafGrvCsyj_rjSE7?usp=sharing). 
 * The [LiDAR frames]( https://drive.google.com/drive/folders/1oNh-m1SjBqDn8nn_UA-1GsP4ciWXqXe2?usp=sharing) utilized by our method. You need to download the LiDAR frames, rename the interested folder name to 'pc', and put it in the same level directory as the 'main.py'.
-* [data](https://drive.google.com/drive/folders/1oIFrRUfthl8H2kJgLHibkD6SlCBlg2uB?usp=sharing)
+
+
+## How to collect your own LiDAR frames
+Suppose that you are also using Livox MID-40,
+[data](https://drive.google.com/drive/folders/1oIFrRUfthl8H2kJgLHibkD6SlCBlg2uB?usp=sharing)
 ## Commands
 ```git clone https://github.com/yorklyb/LiDAR-SFM.git```<br>
 ```cd LiDAR-SFM```<br>
