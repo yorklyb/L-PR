@@ -1,4 +1,8 @@
 # LiDAR-SFM
+In recent years, LiDAR Fiducial Markers (LFMs), which are planar objects designed to provide artificial features for LiDAR sensors, have emerged. However, the potential of LFMs remains unexplored in mapping and localization. To be specific, conventional LiDAR odometry struggles in cases involving dramatic changes in viewpoint and a scarcity of natural features, whereas fiducial markers are beneficial in such situations. <br>
+<br>
+In this study, we propose a novel framework to solve the problems of mapping and localization using LFMs. We first develop an adaptive threshold method to boost the in-the-wild LFM detection. Then, we design a mapping and localization pipeline with two levels of graphs. In particular, frames, LFMs, and their pose estimation point-to-point errors are employed to construct the first-level graph, which is a weighted graph. By utilizing the first graph, we derive the initial values of relative poses between a predefined anchor frame and each non-anchor frame through propagation along the shortest paths determined by Dijkstra's algorithm. Subsequently, we construct the second-level graph as a factor graph. The variables include 1) LFM poses, 2) frame poses, and 3) LFM corner positions. The factors represent 1) measurements of LFM poses, 2) measurements of LFM corner positions, 3) LFM corner positions in the LFM coordinate system, 4) the anchor frame pose, and 5) relative poses between frames. Leveraging the initial values from the first-level graph and LFM detection, we obtain the final result by optimizing all the variables in the second graph through GTSAM. We use the Livox MID-40 LiDAR to conduct experiments, demonstrating the significant superiority of our approach in 3D reconstruction quality and localization accuracy compared to previous methods, including Livox Mapping and LOAM Livox. Moreover, only our method is applicable to scenes with few natural features.
+![fig1](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/f00e6cf4-8378-488f-adc6-326dc65cb28f)
 
 # Instance Reconstruction Evaluation
 We use the same [rosbag](https://drive.google.com/file/d/1WpoWz7d5rv1s7l6DpmfL7u7jyJ3XLOmj/view?usp=sharing) to evaluate the proposed method against  [Livox Mapping](https://github.com/Livox-SDK/livox_mapping) and [LOAM Livox](https://github.com/hku-mars/loam_livox). The rosbag was recorded in a garage. The LiDAR follows an elliptical trajectory to scan a vehicle (Mercedes-Benz GLB).  Please refer to the following videos for the details of the rosbag. <br>
@@ -25,7 +29,25 @@ CD: 0.0106. Recall: 78.8264% <br>
 * [LOAM Livox](https://github.com/hku-mars/loam_livox) <br>
 CD: 0.0335. Recall: 75.2704%<br>
 ![ezgif-5-417764747f](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/264ba542-7c4e-4f93-b0d3-6430ed96a920)<br>
-[rosbag](https://drive.google.com/file/d/1mD_iukNYWuMu_6VKfMzh-utSH37x2Nzp/view?usp=sharing)
+
+# Mapping and Localization Evaluation
+* While the quality of instance reconstruction indirectly reflects the localization accuracy, we also directly compare the localization accuracy of different methods. The following figure shows the setup. The ground truth
+trajectory is given by an OptiTrack Motion Capture (MoCap) system. <br>
+<img width="600" height="300" src="https://github.com/yorklyb/LiDAR-SFM/assets/58899542/640dec4f-64a6-4136-966c-483df4a9412b"/> <br>
+*  The following video shows the sampled [rosbag](https://drive.google.com/file/d/1mD_iukNYWuMu_6VKfMzh-utSH37x2Nzp/view?usp=sharing). Again, the same rosbag is provided for the three methods. <br>
+![lab](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/91d5b50b-fd1b-4ddf-ab04-8bfc975f2821)<br>
+*  This video (×24) shows the mapping procedure of [Livox Mapping](https://github.com/Livox-SDK/livox_mapping).  <br>
+![sdk](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/cacded49-3a75-4f83-a1f8-64c22c6f39c9)<br>
+*  This video (×24) shows the mapping procedure of [LOAM Livox](https://github.com/hku-mars/loam_livox). <br>
+![loam](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/62611bab-44fc-4f15-b72b-edbb043aea41)<br>
+*  This video (×24) shows the mapping result of our method. <br>
+![ours](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/e89f96dd-fecf-4eae-9b5c-07a2fc340d41) <br>
+This figure shows the comparison of the mapping results. (a): ours. (b): Livox Mapping (c): LOAM Livox. <br>
+![labpic](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/31fa662d-b28f-46a1-9dd6-dd8875b6872b) <br>
+This figure shows the comparison in terms of localization accuracy.<br>
+<img width="350" height="300" src="https://github.com/yorklyb/LiDAR-SFM/assets/58899542/84819e69-3ead-4bbe-b53e-10a94a308d4f"/> <br>
+
+
 
 
 ## Requirements
