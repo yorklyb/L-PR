@@ -208,8 +208,8 @@ for i in ids:
     f_re_pose['re_pose'] = re_pose
     re_poses.append(f_re_pose)
 #
-print(poses)
-print(re_poses)
+# print(poses)
+# print(re_poses)
 with open('re_pose.txt', 'w') as f:
     f.write(str(re_poses))
 
