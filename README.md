@@ -40,7 +40,11 @@ A light and insertable version of [IILFM](https://github.com/York-SDCNLab/IILFM)
 The following packages are required. <br>
 [AprilTag](https://pypi.org/project/apriltag/) <br>
 [opencv-python](https://pypi.org/project/opencv-python/)<br>
-cv2 has a built-in ArUco detector. Please ensure you can run the python demos of [ArUco detection](https://pyimagesearch.com/2020/12/21/detecting-aruco-markers-with-opencv-and-python/). Again, a conda environment is not recommended.
+[networkx](https://pypi.org/project/networkx/) <br>
+[open3d](https://pypi.org/project/open3d/) <br>
+[scipy](https://scipy.org/install/) <br>
+[matplotlib](https://pypi.org/project/matplotlib/)<br>
+opencv-python(cv2) has a built-in ArUco detector. Please ensure you can run the python demos of [ArUco detection](https://pyimagesearch.com/2020/12/21/detecting-aruco-markers-with-opencv-and-python/). Again, a conda environment is not recommended. <br>
 
 
 
