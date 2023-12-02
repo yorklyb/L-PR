@@ -74,9 +74,6 @@ opencv-python(cv2) has a built-in ArUco detector. Please ensure you can run the 
 * The [LiDAR frames]( https://drive.google.com/drive/folders/1oNh-m1SjBqDn8nn_UA-1GsP4ciWXqXe2?usp=sharing) utilized by our method. You need to download the LiDAR frames, rename the interested folder name to 'pc', and put it in the same level directory as the 'main.py'.
 
 
-## How to collect your own LiDAR frames
-Suppose that you are also using Livox MID-40,
-[data](https://drive.google.com/drive/folders/1oIFrRUfthl8H2kJgLHibkD6SlCBlg2uB?usp=sharing)
 ## Commands
 ```git clone https://github.com/yorklyb/LiDAR-SFM.git```<br>
 ```cd LiDAR-SFM```<br>
@@ -90,3 +87,17 @@ Suppose that you are also using Livox MID-40,
 Ensure that the point clouds are named '1.pcd', '2.pcd', etc., and are placed into a folder named 'pc'. The 'pc' folder should be located in the same level directory as the 'main.py' file. <br>
 ```python3 main.py```<br>
 After processing all the point clouds, you will see a graph plot. Close it by pressing 'q' or using the close button. Finally, an output file named 'out.pcd' will be generated.
+
+## How to collect your own LiDAR frames
+First, you need to record the rostopic of the point cloud as rosbags. If you are using Livox MID-40, run ```rosbag record /livox/lidar``` in the terminal while the [Livox-ros-driver](https://github.com/Livox-SDK/livox_ros_driver) is running. Then, assume that you placed the LiDAR at N viewpoints and obtained N rosbags. You need to put all of them in a folder named 'data'. Check [this](https://drive.google.com/drive/folders/1oIFrRUfthl8H2kJgLHibkD6SlCBlg2uB?usp=sharing) out as an example. <br>
+Suppose that you have done ```git clone https://github.com/yorklyb/LiDAR-SFM.git```<br>
+```cd LiDAR-SFM```<br>
+```cd merge```<br>
+```mkdir build```<br>
+```cd build```<br>
+```cmake ..```<br>
+```make```<br>
+Put ```process.py``` into build. Also, put 'data' into build.<br>
+Open a terminal and run ```roscore```.
+Open a new terminal and run ```python3 process.py```. You will find the rosbags are transformed into pcd files in the folder 'processed'. Rename the folder as 'pc'.<br>
+"If you are using other LiDAR models, you need to change the rostopic name when recording rosbags using ```rosbag record your_topic_name``` and also update the topic in ```process.py``` accordingly.
