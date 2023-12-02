@@ -13,12 +13,12 @@ The utilized metric is the Chamfer Distance (CD). Given two point sets, the CD i
 ![image](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/8d8f31d4-5bf2-4f58-b0ca-3e1c3cc5380b)<br>
 That is, a smaller CD value indicates a higher fidelity. In the following, the point clouds are normalized into a unit sphere (i.e. [-1,1]). The script to run the quantitative comparison and the PCD files for the point clouds are available [here](https://drive.google.com/file/d/108GugB5e8sS_BZuOAMgFwMsDRQvkD0qE/view?usp=sharing).
 * Ours. <br>
-CD: 0.003029<br>
+CD: 0.0030. Recall: 96.22% <br>
 ![ezgif-1-3eaeb864b3](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/939e7ca6-b916-4831-a24d-869b6dc61686)
 * [Livox Mapping](https://github.com/Livox-SDK/livox_mapping) <br>
-CD: 0.011128<br>
+CD: 0.0106. Recall: 78.8264% <br>
 ![ezgif-1-5774539aa0](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/cdaa5904-da4d-46ed-9f7a-9b063fd5c1df)
 * [LOAM Livox](https://github.com/hku-mars/loam_livox) <br>
-CD: 0.033571<br>
+CD: 0.0335. Recall: 75.2704%<br>
 ![ezgif-5-417764747f](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/264ba542-7c4e-4f93-b0d3-6430ed96a920)<br>
 [rosbag](https://drive.google.com/file/d/1mD_iukNYWuMu_6VKfMzh-utSH37x2Nzp/view?usp=sharing)
