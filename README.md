@@ -31,7 +31,7 @@ CD: 0.0335. Recall: 75.2704%<br>
 ## Requirements
 * GTSAM <br>
 First, please ensure you can run the python demos given by [GTSAM](https://github.com/borglab/gtsam/tree/develop).<br>
-We found that GTSAM cannot be installed appropriately with a conda environment. Thus, a conda environment is not recommended. Otherwise, errors will be reported when you use BearingRangeFactor3D or BetweenFactorPose3.
+We found that GTSAM cannot be installed appropriately in a conda environment. Thus, a conda environment is not recommended. Otherwise, errors will be reported when you use BearingRangeFactor3D or BetweenFactorPose3.
 
 * IILFM <br>
 A light and insertable version of [IILFM](https://github.com/York-SDCNLab/IILFM) is included in the files. To build and run it, you need to install basic tools like cmake.<br>
@@ -46,8 +46,6 @@ The following packages are required. <br>
 [matplotlib](https://pypi.org/project/matplotlib/)<br>
 opencv-python(cv2) has a built-in ArUco detector. Please ensure you can run the python demos of [ArUco detection](https://pyimagesearch.com/2020/12/21/detecting-aruco-markers-with-opencv-and-python/). Again, a conda environment is not recommended. <br>
 
-
-
 ## Commands
 ```git clone https://github.com/York-SDCNLab/IILFM.git](https://github.com/yorklyb/LiDAR-SFM.git```<br>
 ```cd LiDAR-SFM```<br>
@@ -58,6 +56,6 @@ opencv-python(cv2) has a built-in ArUco detector. Please ensure you can run the 
 ```cmake ..```<br>
 ```make```<br>
 ```mv tag_detection ../../```<br>
-Make sure that the point clouds are named by '1.pcd','2.pcd',..., and are put into a folder named 'pc'. Folder pc are in the same path of main.py.
+Ensure that the point clouds are named '1.pcd', '2.pcd', etc., and are placed into a folder named 'pc'. The 'pc' folder should be located in the same level directory as the 'main.py' file. <br>
 ```python3 main.py```<br>
-Then, you will see a output file named out.pcd.
+Then, you will see an output file named 'out.pcd'.
