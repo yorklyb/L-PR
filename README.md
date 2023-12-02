@@ -9,9 +9,13 @@ We use the same [rosbag](https://drive.google.com/file/d/1WpoWz7d5rv1s7l6DpmfL7u
 ![loam](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/6bfeaa09-8a47-4818-904d-7ea4fe851de4)
 * Ground Truth (Mercedes-Benz GLB). <br>
 ![ezgif-1-375ecca334](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/a1eba0cf-f41f-4d7a-89e3-4e31194c628a) <br>
-The utilized metric is the Chamfer Distance (CD). Given two point sets, the CD is the sum of the squared distance of each point to the nearest point in the other point set: <br>
+In the following, the point clouds are normalized into a unit sphere (i.e. [-1,1]). The first metric is the Chamfer Distance (CD). Given two point sets, the CD is the sum of the squared distance of each point to the nearest point in the other point set: <br>
 ![image](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/8d8f31d4-5bf2-4f58-b0ca-3e1c3cc5380b)<br>
-That is, a smaller CD value indicates a higher fidelity. In the following, the point clouds are normalized into a unit sphere (i.e. [-1,1]). The script to run the quantitative comparison and the PCD files for the point clouds are available [here](https://drive.google.com/file/d/108GugB5e8sS_BZuOAMgFwMsDRQvkD0qE/view?usp=sharing).
+That is, a smaller CD value indicates a higher fidelity.<br>
+The second metric is  the recall of the ground truth points from the reconstructed shape, which is defined as:
+![image](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/db61932e-8bee-4bb6-9c09-89f159e6c149) <br>
+A higher Recall indicates a higher fidelity. <br>
+The script to run the quantitative comparison and the PCD files for the point clouds are available [here](https://drive.google.com/file/d/108GugB5e8sS_BZuOAMgFwMsDRQvkD0qE/view?usp=sharing). 
 * Ours. <br>
 CD: 0.0030. Recall: 96.22% <br>
 ![ezgif-1-3eaeb864b3](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/939e7ca6-b916-4831-a24d-869b6dc61686)
