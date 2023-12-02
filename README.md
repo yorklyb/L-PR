@@ -26,3 +26,42 @@ CD: 0.0106. Recall: 78.8264% <br>
 CD: 0.0335. Recall: 75.2704%<br>
 ![ezgif-5-417764747f](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/264ba542-7c4e-4f93-b0d3-6430ed96a920)<br>
 [rosbag](https://drive.google.com/file/d/1mD_iukNYWuMu_6VKfMzh-utSH37x2Nzp/view?usp=sharing)
+
+
+## Requirements
+* GTSAM <br>
+First, please ensure you can run the python demos given by [GTSAM](https://github.com/borglab/gtsam/tree/develop).<br>
+We found that GTSAM cannot be installed appropriately with a conda environment. Thus, a conda environment is not recommended. Otherwise, errors will be reported when you use BearingRangeFactor3D or BetweenFactorPose3.
+
+* IILFM <br>
+A light and insertable version of [IILFM](https://github.com/York-SDCNLab/IILFM) is included in the files. To build and run it, you need to install basic tools like cmake.<br>
+
+* Python Packages <br>
+The following packages are required. <br>
+[AprilTag](https://pypi.org/project/apriltag/) <br>
+[opencv-python](https://pypi.org/project/opencv-python/)<br>
+cv2 has a built-in ArUco detector. Please ensure you can run the python demos of [ArUco detection](https://pyimagesearch.com/2020/12/21/detecting-aruco-markers-with-opencv-and-python/). Again, a conda environment is not recommended.
+
+
+
+## Commands
+```git clone https://github.com/York-SDCNLab/IILFM.git```<br>
+```cd IILFM```<br>
+```catkin build```<br>
+<br>
+Modify the '**yorktag.launch**' in ~/IILFM/src/yorkapriltag/launch according to your LiDAR model (e.g. rostopic, angular resolutions, and so on) and the employed tag family. Then modify the '**config.yaml**' in ~/IILFM/src/yorkapriltag/resources based on your setup (define the locations of the vertices with respect to the world coordinate system). Otherwise, the outputted pose is meaningless. Afterward, run <br>
+```source ./devel/setup.bash```<br>
+```roslaunch yorkapriltag yorktag.launch```<br>
+Open a new terminal in ~/IILFM/src/yorkapriltag/resources and run <br>
+```rosbag play -l bagname.bag```<br>
+<br>
+To view the 6-DOF pose, open a new terminal and run<br>
+``rostopic echo /iilfm/pose`` <br>
+<br>
+To view the point could of the detected 3D fiducials in rviz, open a new terminal and run rviz. In rviz, change the 'Fixed Frame' to 'livox_frame'. ``add/ By topic/ iilfm/ features/ PointCloud2``<br>
+<br>
+* By default, the settings in '**yorktag.launch**' are corresponding to Livox Mid-40. If you just want to try our system and see how it works, there is no need to modify '**yorktag.launch**' and '**config.yaml**'. You may simply run <br>
+```source ./devel/setup.bash```<br>
+```roslaunch yorkapriltag yorktag.launch```<br>
+Then, in ~/IILFM/src/yorkapriltag/resources, open a new terminal and run <br>
+```rosbag play -l bagname.bag```<br>
