@@ -1,10 +1,6 @@
 import numpy as np
-import cv2, PIL
+import cv2
 from cv2 import aruco
-import matplotlib.pyplot as plt
-import matplotlib as mpl
-import pandas as pd
-import time
 import os
 
 img = cv2.imread('this.png',cv2.IMREAD_GRAYSCALE)
@@ -16,7 +12,6 @@ init = 0
 
 # save_path = './imgs2/'
 
-strat = time.time()
 for i in range(600):
 
     threshold = step*i
@@ -108,6 +103,6 @@ for i in range(600):
             f.close()
 
 
-end = time.time()
+
 
 
