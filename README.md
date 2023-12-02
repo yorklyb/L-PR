@@ -100,4 +100,4 @@ Suppose that you have done ```git clone https://github.com/yorklyb/LiDAR-SFM.git
 Put ```process.py``` into build. Also, put 'data' into build.<br>
 Open a terminal and run ```roscore```.
 Open a new terminal and run ```python3 process.py```. You will find the rosbags are transformed into pcd files in the folder 'processed'. Rename the folder as 'pc'.<br>
-"If you are using other LiDAR models, you need to change the rostopic name when recording rosbags using ```rosbag record your_topic_name``` and also update the topic in ```process.py``` accordingly.
+If you are using other LiDAR models, you need to change the rostopic name when recording rosbags using ```rosbag record your_topic_name``` and also update the topic in ```process.py``` accordingly.
