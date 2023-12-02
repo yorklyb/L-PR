@@ -19,7 +19,6 @@ That is, a smaller CD value indicates a higher fidelity.<br>
 The second metric is  the recall of the ground truth points from the reconstructed shape, which is defined as:
 ![image](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/db61932e-8bee-4bb6-9c09-89f159e6c149) <br>
 A higher Recall indicates a higher fidelity. <br>
-The script to run the quantitative comparison and the PCD files for the point clouds are available [here](https://drive.google.com/file/d/108GugB5e8sS_BZuOAMgFwMsDRQvkD0qE/view?usp=sharing). 
 * Ours. <br>
 CD: 0.0030. Recall: 96.22% <br>
 ![ezgif-1-3eaeb864b3](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/939e7ca6-b916-4831-a24d-869b6dc61686)
@@ -68,8 +67,13 @@ The following packages are required. <br>
 [matplotlib](https://pypi.org/project/matplotlib/)<br>
 opencv-python(cv2) has a built-in ArUco detector. Please ensure you can run the python demos of [ArUco detection](https://pyimagesearch.com/2020/12/21/detecting-aruco-markers-with-opencv-and-python/). Again, a conda environment is not recommended. <br>
 
+## Resources
+* Raw [rosbag](https://drive.google.com/file/d/1WpoWz7d5rv1s7l6DpmfL7u7jyJ3XLOmj/view?usp=sharing) of the instance reconstruction evaluation.
+* Raw [rosbag](https://drive.google.com/file/d/1mD_iukNYWuMu_6VKfMzh-utSH37x2Nzp/view?usp=sharing) of the mapping and localization evaluation.
+* The extracted point clouds of vehicles and the script to run the quantitative evaluation are available [here](https://drive.google.com/drive/folders/1YU-PE9-gMEJdje15EafGrvCsyj_rjSE7?usp=sharing). 
+* The [LiDAR frames]( https://drive.google.com/drive/folders/1oNh-m1SjBqDn8nn_UA-1GsP4ciWXqXe2?usp=sharing) utilized by our method. You need to download the LiDAR frames, rename the interested folder name to 'pc', and put it in the same level directory as the 'main.py'.
 ## Commands
-```git clone https://github.com/York-SDCNLab/IILFM.git](https://github.com/yorklyb/LiDAR-SFM.git```<br>
+```git clone https://github.com/yorklyb/LiDAR-SFM.git```<br>
 ```cd LiDAR-SFM```<br>
 ```cd lidar-sfm```<br>
 ```cd iilfm```<br>
@@ -80,4 +84,4 @@ opencv-python(cv2) has a built-in ArUco detector. Please ensure you can run the 
 ```mv tag_detection ../../```<br>
 Ensure that the point clouds are named '1.pcd', '2.pcd', etc., and are placed into a folder named 'pc'. The 'pc' folder should be located in the same level directory as the 'main.py' file. <br>
 ```python3 main.py```<br>
-Then, you will see an output file named 'out.pcd'.
+After processing all the point clouds, you will see a graph plot. Close it by pressing 'q' or using the close button. Finally, an output file named 'out.pcd' will be generated.
