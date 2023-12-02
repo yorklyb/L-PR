@@ -49,23 +49,15 @@ opencv-python(cv2) has a built-in ArUco detector. Please ensure you can run the 
 
 
 ## Commands
-```git clone https://github.com/York-SDCNLab/IILFM.git```<br>
-```cd IILFM```<br>
-```catkin build```<br>
-<br>
-Modify the '**yorktag.launch**' in ~/IILFM/src/yorkapriltag/launch according to your LiDAR model (e.g. rostopic, angular resolutions, and so on) and the employed tag family. Then modify the '**config.yaml**' in ~/IILFM/src/yorkapriltag/resources based on your setup (define the locations of the vertices with respect to the world coordinate system). Otherwise, the outputted pose is meaningless. Afterward, run <br>
-```source ./devel/setup.bash```<br>
-```roslaunch yorkapriltag yorktag.launch```<br>
-Open a new terminal in ~/IILFM/src/yorkapriltag/resources and run <br>
-```rosbag play -l bagname.bag```<br>
-<br>
-To view the 6-DOF pose, open a new terminal and run<br>
-``rostopic echo /iilfm/pose`` <br>
-<br>
-To view the point could of the detected 3D fiducials in rviz, open a new terminal and run rviz. In rviz, change the 'Fixed Frame' to 'livox_frame'. ``add/ By topic/ iilfm/ features/ PointCloud2``<br>
-<br>
-* By default, the settings in '**yorktag.launch**' are corresponding to Livox Mid-40. If you just want to try our system and see how it works, there is no need to modify '**yorktag.launch**' and '**config.yaml**'. You may simply run <br>
-```source ./devel/setup.bash```<br>
-```roslaunch yorkapriltag yorktag.launch```<br>
-Then, in ~/IILFM/src/yorkapriltag/resources, open a new terminal and run <br>
-```rosbag play -l bagname.bag```<br>
+```git clone https://github.com/York-SDCNLab/IILFM.git](https://github.com/yorklyb/LiDAR-SFM.git```<br>
+```cd LiDAR-SFM```<br>
+```cd lidar-sfm```<br>
+```cd iilfm```<br>
+```mkdir build```<br>
+```cd build```<br>
+```cmake ..```<br>
+```make```<br>
+```mv tag_detection ../../```<br>
+Make sure that the point clouds are named by '1.pcd','2.pcd',..., and are put into a folder named 'pc'. Folder pc are in the same path of main.py.
+```python3 main.py```<br>
+Then, you will see a output file named out.pcd.
