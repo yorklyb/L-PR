@@ -9,7 +9,7 @@ In this study, we propose a novel framework to solve the problems of mapping and
 We use the same [rosbag](https://drive.google.com/file/d/1WpoWz7d5rv1s7l6DpmfL7u7jyJ3XLOmj/view?usp=sharing) to evaluate the proposed method against  [Livox Mapping](https://github.com/Livox-SDK/livox_mapping) and [LOAM Livox](https://github.com/hku-mars/loam_livox). The rosbag was recorded in a garage. The LiDAR follows an elliptical trajectory to scan a vehicle (Mercedes-Benz GLB).  Please refer to the following videos for the details of the rosbag. <br>
 
 *  This video (×24) shows the mapping procedure of [Traj_LO](https://github.com/kevin2431/Traj-LO).  <br>
-![image](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/2c9c6bfd-ab93-438d-bc14-5b04565ea67d)
+![trajlo1](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/809eeaf4-1b2b-4466-916a-73f585e6c724)
 
 *  This video (×24) shows the mapping procedure of [Livox Mapping](https://github.com/Livox-SDK/livox_mapping).  <br>
 ![sdk](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/1bd0ec6b-c086-4b53-a252-d9babfbaa6df)  <br>
