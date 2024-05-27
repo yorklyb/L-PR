@@ -40,13 +40,15 @@ CD: 0.0335. Recall: 75.2704%<br>
 * While the quality of instance reconstruction indirectly reflects the localization accuracy, we also directly compare the localization accuracy of different methods. The following figure shows the setup. The ground truth
 trajectory is given by an OptiTrack Motion Capture (MoCap) system. <br>
 <img width="600" height="300" src="https://github.com/yorklyb/LiDAR-SFM/assets/58899542/640dec4f-64a6-4136-966c-483df4a9412b"/> <br>
-*  The following video shows the sampled [rosbag](https://drive.google.com/file/d/1mD_iukNYWuMu_6VKfMzh-utSH37x2Nzp/view?usp=sharing). Again, the same rosbag is provided for the three methods. <br>
-![lab](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/91d5b50b-fd1b-4ddf-ab04-8bfc975f2821)<br>
+
+*  This video (×24) shows the mapping procedure of [Traj_LO](https://github.com/kevin2431/Traj-LO).  <br>
+![trajlo2](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/183f7558-8c09-48a2-9e39-0e2b95619735)
+
 *  This video (×24) shows the mapping procedure of [Livox Mapping](https://github.com/Livox-SDK/livox_mapping).  <br>
 ![sdk](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/cacded49-3a75-4f83-a1f8-64c22c6f39c9)<br>
 *  This video (×24) shows the mapping procedure of [LOAM Livox](https://github.com/hku-mars/loam_livox). <br>
 ![loam](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/62611bab-44fc-4f15-b72b-edbb043aea41)<br>
-*  This video (×24) shows the mapping result of our method. <br>
+*  This video shows the mapping result of our method. <br>
 ![ours](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/e89f96dd-fecf-4eae-9b5c-07a2fc340d41) <br>
 This figure shows the comparison of the mapping results. (a): ours. (b): Livox Mapping (c): LOAM Livox. <br>
 ![labpic](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/31fa662d-b28f-46a1-9dd6-dd8875b6872b) <br>
