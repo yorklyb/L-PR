@@ -78,8 +78,8 @@ opencv-python(cv2) has a built-in ArUco detector. Please ensure you can run the 
 
 ## Data
 * The extracted point clouds of vehicles and the script to run the quantitative evaluation are available [here](https://drive.google.com/drive/folders/1YU-PE9-gMEJdje15EafGrvCsyj_rjSE7?usp=sharing). 
-* The extracted 11 [LiDAR scans]( https://drive.google.com/drive/folders/1oNh-m1SjBqDn8nn_UA-1GsP4ciWXqXe2?usp=sharing) in the degraded scene.
-* You need to download the LiDAR frames, rename the interested folder name to 'pc', and put it in the same level directory as the 'main.py'.
+* All the LiDAR scans used in this work are available [here]( https://drive.google.com/drive/folders/1oNh-m1SjBqDn8nn_UA-1GsP4ciWXqXe2?usp=sharing).
+* You need to download the LiDAR scans, rename the interested folder name to 'pc', and put it in the same level directory as the 'main.py'. Please read the [instructions of IILFM](https://github.com/yorklyb/LiDAR-SFM/blob/master/lidar-sfm/iilfm/readme.txt) carefully to ensure that you are using the correct scripts, as some scans contain AprilTag while others contain ArUco.
 * Raw [rosbag](https://drive.google.com/file/d/1WpoWz7d5rv1s7l6DpmfL7u7jyJ3XLOmj/view?usp=sharing) of the instance reconstruction evaluation.
 * Raw [rosbag](https://drive.google.com/file/d/1mD_iukNYWuMu_6VKfMzh-utSH37x2Nzp/view?usp=sharing) collected in the degraded scene.
 
