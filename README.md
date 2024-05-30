@@ -29,6 +29,9 @@ A higher Recall indicates a higher fidelity. <br>
 * Ours. <br>
 CD: 0.0030. Recall: 96.22% <br>
 ![ezgif-1-3eaeb864b3](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/939e7ca6-b916-4831-a24d-869b6dc61686)
+* [Traj_LO](https://github.com/kevin2431/Traj-LO) <br>
+CD: 0.0107. Recall: 82.88% <br>
+![glblo](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/8ba4221c-e3ae-4bf6-be8e-fdc32f319643)
 * [Livox Mapping](https://github.com/Livox-SDK/livox_mapping) <br>
 CD: 0.0106. Recall: 78.8264% <br>
 ![ezgif-1-5774539aa0](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/cdaa5904-da4d-46ed-9f7a-9b063fd5c1df)
