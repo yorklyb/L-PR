@@ -2,6 +2,9 @@
 Point cloud registration is a prerequisite for many applications in computer vision and robotics. Most existing methods focus on pairwise registration of two point clouds with high overlap. Although there have been some learning-based methods for low-overlap cases, they do not generalize well to unseen scenes and cannot handle degraded scenarios. This paper introduces a novel framework named L-PR, designed to register unordered, low overlap multiview point clouds by leveraging LiDAR fiducial markers. We refer to them as LiDAR fiducial markers, but they are the same as the popular AprilTag and ArUco markers—thin sheets of paper that do not affect the 3D geometry of the environment. We first propose an improved adaptive threshold marker detection method to provide robust detection results when the viewpoints among point clouds change dramatically. Then, we formulate the unordered multiview point cloud registration problem as a maximum a-posteriori (MAP) problem and develop a framework consisting of two levels of graphs to address it. The first-level graph, constructed as a weighted graph, is designed to efficiently and optimally infer initial values of scan poses from the unordered set. The second-level graph is created as a factor graph. By globally optimizing the variables on the graph, including scan poses, marker poses, and marker corner positions, we tackle the MAP problem.
 ![github1](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/66a9c4a3-02bb-4d3e-9a77-b644411fa6d5)
 
+# Point Cloud Registration
+![newdata](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/fef4d71f-3ff3-4bb9-96ca-150a54d7b076)
+
 # Instance Reconstruction Evaluation
 We use the same [rosbag](https://drive.google.com/file/d/1WpoWz7d5rv1s7l6DpmfL7u7jyJ3XLOmj/view?usp=sharing) to evaluate the proposed method against  [Livox Mapping](https://github.com/Livox-SDK/livox_mapping) and [LOAM Livox](https://github.com/hku-mars/loam_livox). The rosbag was recorded in a garage. The LiDAR follows an elliptical trajectory to scan a vehicle (Mercedes-Benz GLB).  Please refer to the following videos for the details of the rosbag. <br>
 
@@ -33,7 +36,7 @@ CD: 0.0106. Recall: 78.8264% <br>
 CD: 0.0335. Recall: 75.2704%<br>
 ![ezgif-5-417764747f](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/264ba542-7c4e-4f93-b0d3-6430ed96a920)<br>
 
-# Mapping and Localization Evaluation
+# Evaluation in a Degraded Scene
 * While the quality of instance reconstruction indirectly reflects the localization accuracy, we also directly compare the localization accuracy of different methods. The following figure shows the setup. The ground truth
 trajectory is given by an OptiTrack Motion Capture (MoCap) system. <br>
 <img width="600" height="300" src="https://github.com/yorklyb/LiDAR-SFM/assets/58899542/640dec4f-64a6-4136-966c-483df4a9412b"/> <br>
@@ -47,12 +50,8 @@ trajectory is given by an OptiTrack Motion Capture (MoCap) system. <br>
 ![loam](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/62611bab-44fc-4f15-b72b-edbb043aea41)<br>
 *  This video shows the mapping result of our method. <br>
 ![ours](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/e89f96dd-fecf-4eae-9b5c-07a2fc340d41) <br>
-This figure shows the comparison of the mapping results. (a): ours. (b): Livox Mapping (c): LOAM Livox. <br>
-![labpic](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/31fa662d-b28f-46a1-9dd6-dd8875b6872b) <br>
-This figure shows the comparison in terms of localization accuracy.<br>
-<img width="350" height="300" src="https://github.com/yorklyb/LiDAR-SFM/assets/58899542/84819e69-3ead-4bbe-b53e-10a94a308d4f"/> <br>
-
-
+This figure shows the comparison of the mapping results. 
+![labpic](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/81d7f4fb-6b81-4dee-8490-1410906b4284)
 
 
 ## Requirements
