@@ -34,10 +34,10 @@ CD: 0.0030. Recall: 96.22% <br>
 CD: 0.0107. Recall: 82.88% <br>
 ![glblo](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/8ba4221c-e3ae-4bf6-be8e-fdc32f319643)
 * [Livox Mapping](https://github.com/Livox-SDK/livox_mapping) <br>
-CD: 0.0106. Recall: 78.8264% <br>
+CD: 0.0106. Recall: 75.2704%<br>
 ![ezgif-1-5774539aa0](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/cdaa5904-da4d-46ed-9f7a-9b063fd5c1df)
 * [LOAM Livox](https://github.com/hku-mars/loam_livox) <br>
-CD: 0.0335. Recall: 75.2704%<br>
+CD: 0.0335. Recall: 78.8264%<br>
 ![ezgif-5-417764747f](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/264ba542-7c4e-4f93-b0d3-6430ed96a920)<br>
 
 # Evaluation in a Degraded Scene
@@ -77,11 +77,11 @@ The following packages are required. <br>
 opencv-python(cv2) has a built-in ArUco detector. Please ensure you can run the python demos of [ArUco detection](https://pyimagesearch.com/2020/12/21/detecting-aruco-markers-with-opencv-and-python/). Again, a conda environment is not recommended. <br>
 
 ## Data
-* Raw [rosbag](https://drive.google.com/file/d/1WpoWz7d5rv1s7l6DpmfL7u7jyJ3XLOmj/view?usp=sharing) of the instance reconstruction evaluation.
-* Raw [rosbag](https://drive.google.com/file/d/1mD_iukNYWuMu_6VKfMzh-utSH37x2Nzp/view?usp=sharing) of the mapping and localization evaluation.
 * The extracted point clouds of vehicles and the script to run the quantitative evaluation are available [here](https://drive.google.com/drive/folders/1YU-PE9-gMEJdje15EafGrvCsyj_rjSE7?usp=sharing). 
-* The [LiDAR frames]( https://drive.google.com/drive/folders/1oNh-m1SjBqDn8nn_UA-1GsP4ciWXqXe2?usp=sharing) utilized by our method. You need to download the LiDAR frames, rename the interested folder name to 'pc', and put it in the same level directory as the 'main.py'.
-
+* The extracted 11 [LiDAR scans]( https://drive.google.com/drive/folders/1oNh-m1SjBqDn8nn_UA-1GsP4ciWXqXe2?usp=sharing) in the degraded scene.
+* You need to download the LiDAR frames, rename the interested folder name to 'pc', and put it in the same level directory as the 'main.py'.
+* Raw [rosbag](https://drive.google.com/file/d/1WpoWz7d5rv1s7l6DpmfL7u7jyJ3XLOmj/view?usp=sharing) of the instance reconstruction evaluation.
+* Raw [rosbag](https://drive.google.com/file/d/1mD_iukNYWuMu_6VKfMzh-utSH37x2Nzp/view?usp=sharing) collected in the degraded scene.
 
 ## Commands
 ```git clone https://github.com/yorklyb/LiDAR-SFM.git```<br>
