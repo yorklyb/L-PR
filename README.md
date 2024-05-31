@@ -108,3 +108,6 @@ Put ```process.py``` into build. Also, put 'data' into build.<br>
 Open a terminal and run ```roscore```.
 Open a new terminal and run ```python3 process.py```. You will find the rosbags are transformed into pcd files in the folder 'processed'. Rename the folder as 'pc'.<br>
 If you are using other LiDAR models, you need to change the rostopic name when recording rosbags using ```rosbag record your_topic_name``` and also update the topic in ```process.py``` accordingly.
+## ACKNOWLEDGMENT
+We would like to express our gratitude to Haiping Wang for helping us reproduce SGHR, Xin Zheng for helping us reproduce Traj LO, and Jie Li and Hao Fan for helping us reproduce [An Efficient Visual SfM Framework Using Planar Markers](https://ieeexplore.ieee.org/document/10041830) (SfM-M). We also thank Honpei Yin and Jiahe Cui for helping us reproduce LOAM Livox, and Hao Wang, Yida Zang, Hunter Schofield, and Hassan Alkomy for their assistance in experiments. Additionally, we are grateful to Yuan Ren, Yicong Fu, and Brian Lynch for constructive discussions.
+
