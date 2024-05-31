@@ -3,7 +3,7 @@ Point cloud registration is a prerequisite for many applications in computer vis
 ![github1](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/66a9c4a3-02bb-4d3e-9a77-b644411fa6d5)
 
 # Point Cloud Registration
-Given that the existing point cloud registration benchmark lacks fiducial markers in the scenes, we construct a new test dataset, as shown in the following figure, with the Livox MID-40.
+Given that the existing point cloud registration benchmark lacks fiducial markers in the scenes, we construct a new test dataset, as shown in the following figure, with the Livox MID-40. The competitors are [SGHR](https://github.com/WHU-USI3DV/SGHR) and [Teaser++](https://github.com/MIT-SPARK/TEASER-plusplus).
 ![newdata](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/fef4d71f-3ff3-4bb9-96ca-150a54d7b076)
 
 # Instance Reconstruction Evaluation
@@ -41,8 +41,6 @@ CD: 0.0335. Recall: 78.8264%<br>
 ![ezgif-5-417764747f](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/264ba542-7c4e-4f93-b0d3-6430ed96a920)<br>
 
 # Evaluation in a Degraded Scene
-* While the quality of instance reconstruction indirectly reflects the localization accuracy, we also directly compare the localization accuracy of different methods. The following figure shows the setup. The ground truth
-trajectory is given by an OptiTrack Motion Capture (MoCap) system. <br>
 <img width="600" height="300" src="https://github.com/yorklyb/LiDAR-SFM/assets/58899542/640dec4f-64a6-4136-966c-483df4a9412b"/> <br>
 
 *  This video (×24) shows the mapping procedure of [Traj_LO](https://github.com/kevin2431/Traj-LO).  <br>
