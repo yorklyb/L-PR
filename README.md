@@ -3,9 +3,12 @@ Point cloud registration is a prerequisite for many applications in computer vis
 ![github1](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/66a9c4a3-02bb-4d3e-9a77-b644411fa6d5)
 
 # Improved LiDAR Fiducial Marker Detection
-![1](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/124ee96e-9f3e-43a7-a13a-1e78f08e4ae7)
-![2](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/0a8bf8ea-17b8-4a34-9661-df6b319a618d)
-![3](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/ec0d0326-1955-4605-88e7-a663c3fccda1)
+![image](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/2d9af120-c31b-4707-bcd8-bf11e43a7247) <br>
+We first propose an improved adaptive threshold marker detection method to provide robust detection results when the viewpoints among point clouds change dramatically. <br>
+![image](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/9f879077-00cc-424b-838d-276e419390ea)
+
+
+
 
 
 
