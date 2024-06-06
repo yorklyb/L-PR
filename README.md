@@ -1,6 +1,10 @@
 # L-PR: Exploiting LiDAR Fiducial Marker for Unordered Low Overlap Multiview Point Cloud Registration (paper under review)
+:tada::tada::tada: <br>
+The [paper](https://arxiv.org/abs/2406.03298) is now available. <br>
+
 Point cloud registration is a prerequisite for many applications in computer vision and robotics. Most existing methods focus on pairwise registration of two point clouds with high overlap. Although there have been some methods for low-overlap cases, they struggle in degraded scenarios. This paper introduces a novel framework named L-PR, designed to register unordered low overlap multiview point clouds leveraging LiDAR fiducial markers. We refer to them as LiDAR fiducial markers, but they are the same as the popular AprilTag and ArUco markers—thin sheets of paper that do not affect the 3D geometry of the environment. We first propose an improved adaptive threshold marker detection method to provide robust detection results when the viewpoints among point clouds change dramatically. Then, we formulate the unordered multiview point cloud registration problem as a maximum a-posteriori (MAP) problem and develop a framework consisting of two levels of graphs to address it. The first-level graph, constructed as a weighted graph, is designed to efficiently and optimally infer initial values of scan poses from the unordered set. The second-level graph is created as a factor graph. By globally optimizing the variables on the graph, including scan poses, marker poses, and marker corner positions, we tackle the MAP problem.
 ![github1](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/66a9c4a3-02bb-4d3e-9a77-b644411fa6d5)
+
 
 # Improved LiDAR Fiducial Marker Detection
 We develop an improved adaptive threshold marker detection method to provide <br> robust detection 
