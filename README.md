@@ -22,7 +22,7 @@ Given that the existing point cloud registration benchmark lacks fiducial marker
 ![newdata](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/fef4d71f-3ff3-4bb9-96ca-150a54d7b076)
 
 # Instance Reconstruction Evaluation
-We use the same [rosbag](https://drive.google.com/file/d/1WpoWz7d5rv1s7l6DpmfL7u7jyJ3XLOmj/view?usp=sharing) to evaluate the proposed method against  [Livox Mapping](https://github.com/Livox-SDK/livox_mapping) and [LOAM Livox](https://github.com/hku-mars/loam_livox). The rosbag was recorded in a garage. The LiDAR follows an elliptical trajectory to scan a vehicle (Mercedes-Benz GLB).  Please refer to the following videos for the details of the rosbag. <br>
+We use the same [rosbag](https://drive.google.com/file/d/1WpoWz7d5rv1s7l6DpmfL7u7jyJ3XLOmj/view?usp=sharing) to evaluate the proposed method against [Traj_LO](https://github.com/kevin2431/Traj-LO), [Livox Mapping](https://github.com/Livox-SDK/livox_mapping) and [LOAM Livox](https://github.com/hku-mars/loam_livox). The rosbag was recorded in a garage. The LiDAR follows an elliptical trajectory to scan a vehicle (Mercedes-Benz GLB).  Please refer to the following videos for the details of the rosbag. <br>
 
 *  This video (×24) shows the mapping procedure of [Traj_LO](https://github.com/kevin2431/Traj-LO).  <br>
 ![trajlo1](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/809eeaf4-1b2b-4466-916a-73f585e6c724)
