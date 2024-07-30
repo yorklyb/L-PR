@@ -21,6 +21,7 @@ results when the viewpoints among point clouds change dramatically. <br>
 # Point Cloud Registration
 Given that the existing point cloud registration benchmark lacks fiducial markers in the scenes, we construct a new test dataset, as shown in the following figure, with the Livox MID-40. The competitors are [SGHR](https://github.com/WHU-USI3DV/SGHR) and [Teaser++](https://github.com/MIT-SPARK/TEASER-plusplus).
 ![newdata](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/fef4d71f-3ff3-4bb9-96ca-150a54d7b076)
+![image](https://github.com/user-attachments/assets/41606165-4493-427a-9aa6-1d924c24c5d5)
 
 # Application 1: 3D Asset Collection
 * Ground Truth (Mercedes-Benz GLB). <br>
