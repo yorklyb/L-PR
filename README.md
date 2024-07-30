@@ -1,43 +1,31 @@
 # L-PR: Exploiting LiDAR Fiducial Marker for Unordered Low Overlap Multiview Point Cloud Registration
-:mega: :mega: :mega: The [paper](https://arxiv.org/abs/2406.03298) and [video](https://www.bilibili.com/video/BV15bhvefEhm/?spm_id_from=333.999.0.0&vd_source=6ecb163024bda9a121cdd47cd37f162b) are now available. <br>
+:mega: :mega: :mega: The [paper](https://arxiv.org/abs/2406.03298) is now available. <br>
 
 
-Point cloud registration is a prerequisite for many applications in computer vision and robotics. Most existing methods focus on pairwise registration of two point clouds with high overlap. Although there have been some methods for low-overlap cases, they struggle in degraded scenarios. This paper introduces a novel framework named L-PR, designed to register unordered low overlap multiview point clouds leveraging LiDAR fiducial markers. We refer to them as LiDAR fiducial markers, but they are the same as the popular AprilTag and ArUco markers—thin sheets of paper that do not affect the 3D geometry of the environment. We first propose an improved adaptive threshold marker detection method to provide robust detection results when the viewpoints among point clouds change dramatically. Then, we formulate the unordered multiview point cloud registration problem as a maximum a-posteriori (MAP) problem and develop a framework consisting of two levels of graphs to address it. The first-level graph, constructed as a weighted graph, is designed to efficiently and optimally infer initial values of scan poses from the unordered set. The second-level graph is created as a factor graph. By globally optimizing the variables on the graph, including scan poses, marker poses, and marker corner positions, we tackle the MAP problem.
-![github1](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/66a9c4a3-02bb-4d3e-9a77-b644411fa6d5)
-
+Point cloud registration is a prerequisite for many applications in computer vision and robotics. 
+Most existing methods focus on pairwise registration of two point clouds with high overlap. Although there have been some methods for low overlap cases, they struggle in degraded scenarios.
+This paper introduces a novel framework dubbed L-PR, designed to register unordered low overlap multiview point clouds leveraging LiDAR fiducial markers.
+We refer to them as LiDAR fiducial markers, but they are the same as the popular AprilTag and ArUco markers—thin sheets of paper that do not affect the 3D geometry of the environment.
+We first propose an improved adaptive threshold marker detection method to provide robust detection results when the viewpoints among point clouds change dramatically.
+Then, we formulate the unordered multiview point cloud registration problem as a maximum a-posteriori (MAP) problem and develop a framework consisting of two levels of graphs to address it.
+The first-level graph, constructed as a weighted graph, is designed to efficiently and optimally infer initial values of scan poses from the unordered set.
+The second-level graph is constructed as a factor graph. By globally optimizing the variables on the graph, including scan poses, marker poses, and marker corner positions, we tackle the MAP problem.
+We conduct both qualitative and quantitative experiments to demonstrate that the proposed method surpasses previous state-of-the-art (SOTA) methods and to showcase that L-PR can serve as a low-cost and efficient tool for 3D asset collection and training data collection. 
+In particular, we collect a new dataset named Livox-3DMatch using L-PR and incorporate it into the training of the SOTA learning-based method, [SGHR](https://github.com/WHU-USI3DV/SGHR), which brings evident improvements for SGHR on various benchmarks.
 
 # Improved LiDAR Fiducial Marker Detection
 We develop an improved adaptive threshold marker detection method to provide <br> robust detection 
 results when the viewpoints among point clouds change dramatically. <br>
 ![image](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/9f879077-00cc-424b-838d-276e419390ea) ![image](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/2d9af120-c31b-4707-bcd8-bf11e43a7247)
 
-
-
-
-
-
-
-
 # Point Cloud Registration
 Given that the existing point cloud registration benchmark lacks fiducial markers in the scenes, we construct a new test dataset, as shown in the following figure, with the Livox MID-40. The competitors are [SGHR](https://github.com/WHU-USI3DV/SGHR) and [Teaser++](https://github.com/MIT-SPARK/TEASER-plusplus).
 ![newdata](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/fef4d71f-3ff3-4bb9-96ca-150a54d7b076)
 
-# Instance Reconstruction Evaluation
-We use the same [rosbag](https://drive.google.com/file/d/1WpoWz7d5rv1s7l6DpmfL7u7jyJ3XLOmj/view?usp=sharing) to evaluate the proposed method against [Traj_LO](https://github.com/kevin2431/Traj-LO), [Livox Mapping](https://github.com/Livox-SDK/livox_mapping) and [LOAM Livox](https://github.com/hku-mars/loam_livox). The rosbag was recorded in a garage. The LiDAR follows an elliptical trajectory to scan a vehicle (Mercedes-Benz GLB).  Please refer to the following videos for the details of the rosbag. <br>
-
-*  This video (×24) shows the mapping procedure of [Traj_LO](https://github.com/kevin2431/Traj-LO).  <br>
-![trajlo1](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/809eeaf4-1b2b-4466-916a-73f585e6c724)
-
-*  This video (×24) shows the mapping procedure of [Livox Mapping](https://github.com/Livox-SDK/livox_mapping).  <br>
-![sdk](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/1bd0ec6b-c086-4b53-a252-d9babfbaa6df)  <br>
-*  This video (×24) shows the mapping procedure of [LOAM Livox](https://github.com/hku-mars/loam_livox). <br>
-![loam](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/6bfeaa09-8a47-4818-904d-7ea4fe851de4) <br>
-* This video shows the pipeline of our framework. <br>
-![ourspipeline](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/79f8d989-bc41-45f9-a1f0-e46cdf860257)
-
+# Application 1: 3D Asset Collection
 * Ground Truth (Mercedes-Benz GLB). <br>
 ![ezgif-1-375ecca334](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/a1eba0cf-f41f-4d7a-89e3-4e31194c628a) <br>
-In the following, the point clouds are normalized into a unit sphere (i.e. [-1,1]). The first metric is the Chamfer Distance (CD). Given two point sets, the CD is the sum of the squared distance of each point to the nearest point in the other point set: <br>
+In the following, the point cloud is normalized into a unit sphere (i.e. [-1,1]). The first metric is the Chamfer Distance (CD). Given two point sets, the CD is the sum of the squared distance of each point to the nearest point in the other point set: <br>
 ![image](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/8d8f31d4-5bf2-4f58-b0ca-3e1c3cc5380b)<br>
 That is, a smaller CD value indicates a higher fidelity.<br>
 The second metric is  the recall of the ground truth points from the reconstructed shape, which is defined as:
@@ -46,30 +34,16 @@ A higher Recall indicates a higher fidelity. <br>
 * Ours. <br>
 CD: 0.0030. Recall: 96.22% <br>
 ![ezgif-1-3eaeb864b3](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/939e7ca6-b916-4831-a24d-869b6dc61686)
-* [Traj_LO](https://github.com/kevin2431/Traj-LO) <br>
-CD: 0.0107. Recall: 82.88% <br>
-![glblo](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/8ba4221c-e3ae-4bf6-be8e-fdc32f319643)
-* [Livox Mapping](https://github.com/Livox-SDK/livox_mapping) <br>
-CD: 0.0106. Recall: 75.2704%<br>
-![ezgif-1-5774539aa0](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/cdaa5904-da4d-46ed-9f7a-9b063fd5c1df)
-* [LOAM Livox](https://github.com/hku-mars/loam_livox) <br>
-CD: 0.0335. Recall: 78.8264%<br>
-![ezgif-5-417764747f](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/264ba542-7c4e-4f93-b0d3-6430ed96a920)<br>
+# Application 2: Training Data Collection
+We collect a new training dataset called Livox-3DMatch using the proposed L-PR. Livox-3DMatch augments the original 3DMatch training data from 14,400 pairs to 17,700 pairs (a 22.91% increase). By training on this augmented dataset, the performance of [SGHR](https://github.com/WHU-USI3DV/SGHR) is improved by 2.90% on 3DMatch,4.29% on ETH, and 22.72% (translation) / 11.19% (rotation) on ScanNet.
+![livox3dmatch](https://github.com/user-attachments/assets/716bd4e1-9a5d-4f4c-a1c9-71127ee0037e)
+![image](https://github.com/user-attachments/assets/f286aa80-9715-40df-a7a2-ef547f482fe9)
 
-# Evaluation in a Degraded Scene
-<img width="600" height="300" src="https://github.com/yorklyb/LiDAR-SFM/assets/58899542/640dec4f-64a6-4136-966c-483df4a9412b"/> <br>
 
-*  This video (×24) shows the mapping procedure of [Traj_LO](https://github.com/kevin2431/Traj-LO).  <br>
-![trajlo2](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/183f7558-8c09-48a2-9e39-0e2b95619735)
 
-*  This video (×24) shows the mapping procedure of [Livox Mapping](https://github.com/Livox-SDK/livox_mapping).  <br>
-![sdk](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/cacded49-3a75-4f83-a1f8-64c22c6f39c9)<br>
-*  This video (×24) shows the mapping procedure of [LOAM Livox](https://github.com/hku-mars/loam_livox). <br>
-![loam](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/62611bab-44fc-4f15-b72b-edbb043aea41)<br>
-*  This video shows the mapping result of our method. <br>
-![ours](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/e89f96dd-fecf-4eae-9b5c-07a2fc340d41) <br>
-This figure shows the comparison of the mapping results. 
-![labpic](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/81d7f4fb-6b81-4dee-8490-1410906b4284)
+
+# Application 3: Reconstructing a Degraded Scene
+![labpic](https://github.com/user-attachments/assets/b924df15-6cd8-4341-96c4-be81ae5887ae)
 
 
 ## Requirements
