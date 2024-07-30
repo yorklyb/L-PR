@@ -36,7 +36,7 @@ A higher Recall indicates a higher fidelity. <br>
 CD: 0.0030. Recall: 96.22% <br>
 ![ezgif-1-3eaeb864b3](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/939e7ca6-b916-4831-a24d-869b6dc61686)
 # Application 2: Training Data Collection
-We collect a new training dataset called Livox-3DMatch using the proposed L-PR. Livox-3DMatch augments the original 3DMatch training data from 14,400 pairs to 17,700 pairs (a 22.91% increase). By training on this augmented dataset, the performance of [SGHR](https://github.com/WHU-USI3DV/SGHR) is improved by 2.90% on 3DMatch,4.29% on ETH, and 22.72% (translation) / 11.19% (rotation) on ScanNet.
+We collect a new training dataset called [Livox3DMatch]( https://drive.google.com/file/d/1zt9liSOxcERJ6jKVxvr4WWVXeDJ8BfqH/view?usp=sharing) using the proposed L-PR. Livox-3DMatch augments the original 3DMatch training data from 14,400 pairs to 17,700 pairs (a 22.91% increase). By training on this augmented dataset, the performance of [SGHR](https://github.com/WHU-USI3DV/SGHR) is improved by 2.90% on 3DMatch,4.29% on ETH, and 22.72% (translation) / 11.19% (rotation) on ScanNet.
 ![livox3dmatch](https://github.com/user-attachments/assets/716bd4e1-9a5d-4f4c-a1c9-71127ee0037e)
 ![image](https://github.com/user-attachments/assets/f286aa80-9715-40df-a7a2-ef547f482fe9)
 
