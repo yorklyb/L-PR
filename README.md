@@ -44,6 +44,7 @@ We collect a new training dataset called Livox-3DMatch using the proposed L-PR. 
 
 
 # Application 3: Reconstructing a Degraded Scene
+The competitor is [An Efficient Visual SfM Framework Using Planar Markers](https://ieeexplore.ieee.org/document/10041830) (SfM-M). This scenario has repetitive structures and weak geometric features. We attach thirteen 16.4 cm x 16.4 cm AprilTags to the wall. The LiDAR scans the scene from 11 viewpoints. We also captured 72 images with an iPhone 13 to use as input for SfM-M. The ground truth trajectories are given by an OptiTrack Motion Capture system. The proposed approach achieves better localization accuracy, which is expected given that LiDAR is a ranging sensor. 
 ![labpic](https://github.com/user-attachments/assets/b924df15-6cd8-4341-96c4-be81ae5887ae)
 
 
