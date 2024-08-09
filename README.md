@@ -78,8 +78,8 @@ opencv-python(cv2) has a built-in ArUco detector. Please ensure you can run the 
 
 ## Commands
 ```git clone https://github.com/yorklyb/LiDAR-SFM.git```<br>
-```cd LiDAR-SFM```<br>
-```cd lidar-sfm```<br>
+```cd L-PR```<br>
+```cd lpr```<br>
 ```cd iilfm```<br>
 ```mkdir build```<br>
 ```cd build```<br>
@@ -93,7 +93,7 @@ After processing all the point clouds, you will see a graph plot. Close it by pr
 ## How to collect your own LiDAR frames
 First, you need to record the rostopic of the point cloud as rosbags. If you are using Livox MID-40, run ```rosbag record /livox/lidar``` in the terminal while the [Livox-ros-driver](https://github.com/Livox-SDK/livox_ros_driver) is running. Then, assume that you placed the LiDAR at N viewpoints and obtained N rosbags. You need to put all of them in a folder named 'data'. Check [this](https://drive.google.com/drive/folders/1oIFrRUfthl8H2kJgLHibkD6SlCBlg2uB?usp=sharing) out as an example. <br>
 Suppose that you have done ```git clone https://github.com/yorklyb/LiDAR-SFM.git```<br>
-```cd LiDAR-SFM```<br>
+```cd L-PR```<br>
 ```cd merge```<br>
 ```mkdir build```<br>
 ```cd build```<br>
