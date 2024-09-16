@@ -47,7 +47,7 @@ The competitor is [An Efficient Visual SfM Framework Using Planar Markers](https
 ![labpic](https://github.com/user-attachments/assets/b924df15-6cd8-4341-96c4-be81ae5887ae)
 
 # Application 4: 3D Map Merging
-You need to apply the [this algortihm](https://arxiv.org/abs/2209.01072) to localize fiducials on a 3D map.
+You need to apply the [this algortihm](https://ieeexplore.ieee.org/abstract/document/10654791) to localize fiducials on a 3D map.
 <img width="600" height="380" src="https://github.com/user-attachments/assets/b54302a9-298a-411c-b076-aca6ea217eaa"/> <br>
 <img width="600" height="120" src="https://github.com/user-attachments/assets/ae38fa64-b457-4709-8b15-03b985acaf05"/> <br>
 
