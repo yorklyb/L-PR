@@ -2,16 +2,32 @@
 :mega: :mega: :mega: The [paper](https://arxiv.org/abs/2406.03298) is now available. <br>
 
 
-Point cloud registration is a prerequisite for many applications in computer vision and robotics. 
-Most existing methods focus on pairwise registration of two point clouds with high overlap. Although there have been some methods for low overlap cases, they struggle in degraded scenarios.
-This paper introduces a novel framework dubbed L-PR, designed to register unordered low overlap multiview point clouds leveraging LiDAR fiducial markers.
-We refer to them as LiDAR fiducial markers, but they are the same as the popular AprilTag and ArUco markers—thin sheets of paper that do not affect the 3D geometry of the environment.
-We first propose an improved adaptive threshold marker detection method to provide robust detection results when the viewpoints among point clouds change dramatically.
-Then, we formulate the unordered multiview point cloud registration problem as a maximum a-posteriori (MAP) problem and develop a framework consisting of two levels of graphs to address it.
-The first-level graph, constructed as a weighted graph, is designed to efficiently and optimally infer initial values of scan poses from the unordered set.
-The second-level graph is constructed as a factor graph. By globally optimizing the variables on the graph, including scan poses, marker poses, and marker corner positions, we tackle the MAP problem.
-We conduct both qualitative and quantitative experiments to demonstrate that the proposed method surpasses previous state-of-the-art (SOTA) methods and to showcase that L-PR can serve as a low-cost and efficient tool for 3D asset collection and training data collection. 
-In particular, we collect a new dataset named Livox-3DMatch using L-PR and incorporate it into the training of the SOTA learning-based method, [SGHR](https://github.com/WHU-USI3DV/SGHR), which brings evident improvements for SGHR on various benchmarks.
+Point cloud registration is a prerequisite for many applications in computer vision and
+robotics. Most existing methods focus on the registration of point clouds with high
+overlap. While some learning-based methods address low overlap cases, they struggle
+in out-of-distribution scenarios with extremely low overlap ratios. This paper introduces
+a novel framework dubbed L-PR, designed to register unordered low overlap multiview
+point clouds leveraging LiDAR fiducial markers. We refer to them as LiDAR fiducial
+markers, but they are the same as the popular AprilTag and ArUco markers, thin sheets
+of paper that do not affect the 3D geometry of the environment. We first propose an
+improved adaptive threshold marker detection method to provide robust detection
+results when the viewpoints among point clouds change dramatically. Then, we
+formulate the unordered multiview point cloud registration problem as a maximum a posterior (MAP) problem and develop a framework consisting of two levels of graphs
+to address it. The first-level graph, constructed as a weighted graph, is designed to
+efficiently and optimally infer initial values of scan poses from the unordered set. The
+second level graph is constructed as a factor graph. By globally optimizing the
+variables on the graph, including scan poses, marker poses, and marker corner
+positions, we tackle the MAP problem. We perform both qualitative and quantitative
+experiments to demonstrate that the proposed method outperforms previous state-of-the-art (SOTA) methods in addressing challenging low overlap cases. Specifically, the
+proposed method can serve as a convenient, efficient, and low-cost tool for
+applications such as 3D asset collection from sparse scans, training data collection in
+unseen scenes, reconstruction of degraded scenes, and merging large-scale low
+overlap 3D maps, which existing methods struggle with. We also collect a new dataset
+named Livox-3DMatch using L-PR and incorporate it into the training of the SOTA
+learning-based methods, which brings evident improvements for them across various
+benchmarks.
+![mov2-MacBook Air - SHAN](https://github.com/user-attachments/assets/b1c2bf0a-b4dd-43aa-95d1-57d9f9507e13)
+
 
 # Improved LiDAR Fiducial Marker Detection
 We develop an improved adaptive threshold marker detection method to provide <br> robust detection 
@@ -19,11 +35,17 @@ results when the viewpoints among point clouds change dramatically. <br>
 ![image](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/9f879077-00cc-424b-838d-276e419390ea) ![image](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/2d9af120-c31b-4707-bcd8-bf11e43a7247)
 
 # Point Cloud Registration
-Given that the existing point cloud registration benchmark lacks fiducial markers in the scenes, we construct a new test dataset, as shown in the following figure, with the Livox MID-40. The competitors are [SGHR](https://github.com/WHU-USI3DV/SGHR) and [Teaser++](https://github.com/MIT-SPARK/TEASER-plusplus).
-![newdata](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/fef4d71f-3ff3-4bb9-96ca-150a54d7b076)
-![image](https://github.com/user-attachments/assets/41606165-4493-427a-9aa6-1d924c24c5d5)
+Given that the existing point cloud registration benchmark lacks fiducial markers in the scenes, we construct a new test dataset, as shown in the following figure, with the Livox MID-40. The competitors are 
+[MDGD(RA-L'24)](https://github.com/Shi-Qi-Li/MDGD),
+[SGHR(CVPR'23)](https://github.com/WHU-USI3DV/SGHR),
+[SE3ET(RA-L'24)](https://github.com/UMich-CURLY/SE3ET),
+[GeoTrans(TPAMI'23)](https://github.com/qinzheng93/GeoTransformer), and 
+[Teaser++(T-RO'20)](https://github.com/MIT-SPARK/TEASER-plusplus).
+![newdata3](https://github.com/user-attachments/assets/606742ae-251a-48d0-a76a-38cb231098fd)
+
 
 # Application 1: 3D Asset Collection
+![glbtraj2](https://github.com/user-attachments/assets/96a68cb3-403b-4700-b3b1-0d262d1d6cc1)
 * Ground Truth (Mercedes-Benz GLB). <br>
 ![ezgif-1-375ecca334](https://github.com/yorklyb/LiDAR-SFM/assets/58899542/a1eba0cf-f41f-4d7a-89e3-4e31194c628a) <br>
 In the following, the point cloud is normalized into a unit sphere (i.e. [-1,1]). The first metric is the Chamfer Distance (CD). Given two point sets, the CD is the sum of the squared distance of each point to the nearest point in the other point set: <br>
@@ -38,18 +60,19 @@ CD: 0.0030. Recall: 96.22% <br>
 # Application 2: Training Data Collection
 We collect a new training dataset called [Livox3DMatch]( https://drive.google.com/file/d/1zt9liSOxcERJ6jKVxvr4WWVXeDJ8BfqH/view?usp=sharing) using the proposed L-PR. Livox-3DMatch augments the original 3DMatch training data from 14,400 pairs to 17,700 pairs (a 22.91% increase). By training on this augmented dataset, the performance of [SGHR](https://github.com/WHU-USI3DV/SGHR) is improved by 2.90% on [3DMatch](https://drive.google.com/file/d/1T9fyU2XAYmXwiWZif--j5gP9G8As5cxn/view), 4.29% on [ETH](https://drive.google.com/file/d/1MW8SV44fuFTS5b2XrdADaqH5xRf3sLMk/view), and 22.72% (translation) / 11.19% (rotation) on [ScanNet](https://drive.google.com/file/d/1GM6ePDDqZ3awJOZpctd3nqy1VgazV6CD/view).
 ![livox3dmatch](https://github.com/user-attachments/assets/716bd4e1-9a5d-4f4c-a1c9-71127ee0037e)
-![image](https://github.com/user-attachments/assets/f286aa80-9715-40df-a7a2-ef547f482fe9)
 To reproduce the results in the above table, we recommend reproducing [SGHR](https://github.com/WHU-USI3DV/SGHR) first, including its training and testing. Then, download our Livox3DMatch dataset (it is already mixed with the original 3DMatch_train) and extract the folder into ./data. Rename the file to 3DMatch_train if you do not want to make any modifications to SGHR. Finally, train and test the model. Before running Train.py, remember to replace the [dataset.py](https://github.com/WHU-USI3DV/SGHR/blob/master/dataops/dataset.py) with [our dataset.py](https://github.com/yorklyb/L-PR/blob/master/dataset.py). 
 Note that the SGHR [weight](https://github.com/WHU-USI3DV/SGHR/tree/master/checkpoints/yoho) (trained on 3DMatch_train only) is already downloaded when you git clone SGHR. The model trained on Livox3DMatch, named [yoho_my](https://github.com/yorklyb/L-PR/tree/master/yoho_my), is available in this repository. You could simply replace the original weights with ours and do a quick test.
 
 # Application 3: Reconstructing a Degraded Scene
 The competitor is [An Efficient Visual SfM Framework Using Planar Markers](https://ieeexplore.ieee.org/document/10041830) (SfM-M). This scenario has repetitive structures and weak geometric features. We attach thirteen 16.4 cm x 16.4 cm AprilTags to the wall. The LiDAR scans the scene from 11 viewpoints. We also captured 72 images with an iPhone 13 to use as input for SfM-M. The ground truth trajectories are given by an OptiTrack Motion Capture system. The proposed approach achieves better localization accuracy, which is expected given that LiDAR is a ranging sensor. 
-![labpic](https://github.com/user-attachments/assets/b924df15-6cd8-4341-96c4-be81ae5887ae)
+![labpic2](https://github.com/user-attachments/assets/f803863a-504a-4681-ad31-7ff27abe48e9)
+
 
 # Application 4: 3D Map Merging
 You need to apply the [this algortihm](https://ieeexplore.ieee.org/abstract/document/10654791) to localize fiducials on a 3D map.
-<img width="600" height="380" src="https://github.com/user-attachments/assets/b54302a9-298a-411c-b076-aca6ea217eaa"/> <br>
-<img width="600" height="120" src="https://github.com/user-attachments/assets/ae38fa64-b457-4709-8b15-03b985acaf05"/> <br>
+<img width="650" height="380" src="https://github.com/user-attachments/assets/b54302a9-298a-411c-b076-aca6ea217eaa"/> <br>
+<img width="650" height="450" src="https://github.com/user-attachments/assets/78c0976c-7d8e-4f72-af84-bba4079fb81f"/> <br>
+
 
 ## Requirements
 * GTSAM <br>
@@ -104,5 +127,5 @@ Open a terminal and run ```roscore```.
 Open a new terminal and run ```python3 process.py```. You will find the rosbags are transformed into pcd files in the folder 'processed'. Rename the folder as 'pc'.<br>
 If you are using other LiDAR models, you need to change the rostopic name when recording rosbags using ```rosbag record your_topic_name``` and also update the topic in ```process.py``` accordingly.
 ## ACKNOWLEDGMENT
-We would like to express our gratitude to Haiping Wang for helping us reproduce SGHR, Xin Zheng for helping us reproduce Traj LO, and Jie Li and Hao Fan for helping us reproduce [An Efficient Visual SfM Framework Using Planar Markers](https://ieeexplore.ieee.org/document/10041830) (SfM-M). We also thank Honpei Yin and Jiahe Cui for helping us reproduce LOAM Livox, and Hao Wang, Yida Zang, Hunter Schofield, and Hassan Alkomy for their assistance in experiments. Additionally, we are grateful to Han Wang, Binbin Xu, Yuan Ren, Jianping Li, Yicong Fu, and Brian Lynch for constructive discussions.
+We would like to express our gratitude to Shiqi Li for helping us reproduce MDGD, Haiping Wang for helping us reproduce SGHR, Xin Zheng for helping us reproduce Traj LO, and Jie Li and Hao Fan for helping us reproduce [An Efficient Visual SfM Framework Using Planar Markers](https://ieeexplore.ieee.org/document/10041830) (SfM-M). We also thank Honpei Yin and Jiahe Cui for helping us reproduce LOAM Livox, and Hao Wang, Yida Zang, Hunter Schofield, and Hassan Alkomy for their assistance in experiments. Additionally, we are grateful to Han Wang, Binbin Xu, Yuan Ren, Jianping Li, Yicong Fu, and Brian Lynch for constructive discussions.
 
