@@ -1,5 +1,5 @@
 # L-PR: Exploiting LiDAR Fiducial Marker for Unordered Low Overlap Multiview Point Cloud Registration
-:mega: :mega: :mega: The [paper](https://arxiv.org/abs/2406.03298) is now available. <br>
+:mega: :mega: :mega: This work has been accepted by IEEE Transactions on Instrumentation & Measurement. [ArXiv](https://arxiv.org/abs/2406.03298) is now available. <br>
 
 
 Point cloud registration is a prerequisite for many applications in computer vision and
