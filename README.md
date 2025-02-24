@@ -129,3 +129,18 @@ If you are using other LiDAR models, you need to change the rostopic name when r
 ## ACKNOWLEDGMENT
 We would like to express our gratitude to Shiqi Li for helping us reproduce MDGD, Haiping Wang for helping us reproduce SGHR, Xin Zheng for helping us reproduce Traj LO, and Jie Li and Hao Fan for helping us reproduce [An Efficient Visual SfM Framework Using Planar Markers](https://ieeexplore.ieee.org/document/10041830) (SfM-M). We also thank Honpei Yin and Jiahe Cui for helping us reproduce LOAM Livox, and Hao Wang, Yida Zang, Hunter Schofield, and Hassan Alkomy for their assistance in experiments. Additionally, we are grateful to Han Wang, Binbin Xu, Yuan Ren, Jianping Li, Yicong Fu, and Brian Lynch for constructive discussions.
 
+# Citation
+If you find this work helpful for your research, please cite our [paper](https://ieeexplore.ieee.org/document/10900543):
+```
+@ARTICLE{10900543,
+  author={Liu, Yibo and Shan, Jinjun and Haridevan, Amaldev and Zhang, Shuo},
+  journal={IEEE Transactions on Instrumentation and Measurement}, 
+  title={L-PR: Exploiting LiDAR Fiducial Marker for Unordered Low Overlap Multiview Point Cloud Registration}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1-1},
+  keywords={Point cloud compression;Fiducial markers;Laser radar;Three-dimensional printing;Visualization;Training data;Calibration;Training;Translation;Registers;LiDAR Fiducial Marker;Multiview Point Cloud;Low Overlap;Registration;Dataset},
+  doi={10.1109/TIM.2025.3544745}}
+```
+
