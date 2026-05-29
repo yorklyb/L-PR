@@ -135,12 +135,12 @@ If you find this work helpful for your research, please cite our [paper](https:/
 @ARTICLE{10900543,
   author={Liu, Yibo and Shan, Jinjun and Haridevan, Amaldev and Zhang, Shuo},
   journal={IEEE Transactions on Instrumentation and Measurement}, 
-  title={L-PR: Exploiting LiDAR Fiducial Marker for Unordered Low Overlap Multiview Point Cloud Registration}, 
+  title={L-PR: Exploiting LiDAR Fiducial Marker for Unordered Low-Overlap Multiview Point Cloud Registration}, 
   year={2025},
-  volume={},
+  volume={74},
   number={},
-  pages={1-1},
-  keywords={Point cloud compression;Fiducial markers;Laser radar;Three-dimensional printing;Visualization;Training data;Calibration;Training;Translation;Registers;LiDAR Fiducial Marker;Multiview Point Cloud;Low Overlap;Registration;Dataset},
+  pages={1-14},
+  keywords={Point cloud compression;Fiducial markers;Laser radar;Three-dimensional printing;Visualization;Training data;Calibration;Training;Translation;Registers;Dataset;light detection and ranging (LiDAR) fiducial marker;low-overlap;multiview point cloud;registration},
   doi={10.1109/TIM.2025.3544745}}
 ```
 
